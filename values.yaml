@@ -1,21 +1,21 @@
-grafana:
-  adminPassword: admin
-  service:
-    type: ClusterIP
+kube-prometheus-stack:
+  grafana:
+    adminPassword: admin
+    service:
+      type: ClusterIP
 
-# Disable node exporter (important for Docker Desktop)
-nodeExporter:
-  enabled: false
+  prometheus-node-exporter:
+    enabled: false
 
-prometheus:
-  prometheusSpec:
-    additionalScrapeConfigs:
-      - job_name: windows-local
-        scrape_interval: 15s
-        static_configs:
-          - targets:
-              - "host.docker.internal:9182"
+  prometheus:
+    prometheusSpec:
+      additionalScrapeConfigs:
+        - job_name: windows-local
+          scrape_interval: 15s
+          static_configs:
+            - targets:
+                - "host.docker.internal:9182"
 
-alertmanager:
-  alertmanagerSpec:
-    replicas: 1
+  alertmanager:
+    alertmanagerSpec:
+      replicas: 1
