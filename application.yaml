@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/j4jigs/monitoring.git
     targetRevision: main
-    path: monitoring
+    path: .
 
   destination:
     server: https://kubernetes.default.svc
