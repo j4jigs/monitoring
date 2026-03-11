@@ -3,7 +3,8 @@ grafana:
   service:
     type: ClusterIP
 
-prometheus-node-exporter:
+# Disable node exporter (important for Docker Desktop)
+nodeExporter:
   enabled: false
 
 prometheus:
