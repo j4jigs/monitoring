@@ -3,6 +3,9 @@ grafana:
   service:
     type: ClusterIP
 
+prometheus-node-exporter:
+  enabled: false
+
 prometheus:
   prometheusSpec:
     additionalScrapeConfigs:
